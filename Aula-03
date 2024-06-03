@@ -1,0 +1,28 @@
+Zip
+Já temos a pasta backup, agora vamos compactar essa pasta em .zip e verificar o que há dentro:
+
+zip -r backup.zip backup 
+less backup.zip
+Agora, vamos criar uma nova pasta para descompactar esse arquivo:
+
+mkdir teste 
+mv backup.zip teste
+unzip backup.zip
+Em seguida, vamos voltar à pasta anterior e excluir a pasta backup. Depois, vamos descompactar de forma silenciosa, sem mostrar o log:
+
+rm -r backup/
+unzip -q backup.zip
+Tar
+Outra forma de compactação no Linux é o tar. Vamos testar e visualizar:
+
+clear
+tar -czf backup.tar.gz backup 
+less backup.tar.gz
+Por fim, vamos descompactar o arquivo .tar:
+
+mkdir sacola
+mv backup.tar.gaz sacola/
+cd sacola/
+tar -xzf backup.tar.gz
+cd backup/
+ls
