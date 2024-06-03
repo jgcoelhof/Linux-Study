@@ -1,0 +1,103 @@
+VI - > Editor que geralmente vem nativo do linux
+
+A - leva pro final da linha
+
+:q sai do vi, :q! sai sem salvar
+:w salva o arquivo´[
+I escreve A maiusculo escreve no final da linha
+
+:s/palavra/palavranova pra substituir 
+:/palavra para pesquisar
+
+
+wc arquivo.txt -> da direita pra esquerda... primeiro número são as linhas no arquivo, segundo número a 
+quantidade de palavras no arquivo, e o terceiro a quantidade de caracteres no arquivo
+
+uniq arquivo.txt -> não mostra linhas duplicadas no arquivo
+uniq -D arquivo.txt - > mostra as ocorrencias repetidas no arquivo
+ --help para ver todas as possibilidades
+
+ sort ->mostra o arquivo ordenado em ordem alfabética
+
+ NANO
+
+ crtl g ajuda completa com varios comandos 
+
+ head do começo ao fim 
+ tail do fim ao começo
+
+ Utilizando o VI
+Vamos abrir o Vi com o seguinte comando:
+
+vi 
+Para começar a digitar no VI você precisa apertar a tecla i. Então, escreva:
+
+Estudos sobre terminal
+Estamos utilizando o ubuntu
+
+
+Agora para sair do modo edição e salvar, vamos apertar a tecla ESC e digitar:
+
+:wq arquivo.txtPara sair do editor vamos usar o comando :q.
+
+Vamos abrir o arquivo.txt:
+
+vi arquivo.txt
+
+Vamos entrar no modo de inserção usando a tecla i. Vamos para última linha e apertamos a tecla A para posicionar o cursor ao final da linha. E então, vamos escrever:
+
+Windows ou Linux
+
+Vamos sair sem salvar, para isso vamos usar o comando :q!.
+
+Para copiar uma linha podemos usar o comando yy e para colar usamos p. Para recortar, usamos o comando dd. Para localizar um texto, temos o comando :/[texto a ser localizado].
+
+Alguns dados do arquivo
+Para analisar algumas estatísticas do arquivo.txt, podemos usar:
+
+wc arquivo.txt
+
+E algo parecido com isto será retornado:
+
+13 32 230 arquivo.txt
+Onde:
+
+13 - significa que existem 13 linhas neste arquivo.
+32 - significa que existem 32 palavras neste arquivo.
+230 - significa que existem 230 caracteres neste arquivo.
+Podemos realizar filtragens, por exemplo, de linhas duplicadas. Para isso fazemos:
+
+uniq -D arquivo.txt
+
+Se desejamos mostrar eliminando a duplicidade podemos usar:
+
+uniq arquivo.txt
+Para verificar a quantidade de vezes de duplicidade, podemos usar:
+
+uniq -c arquivo.txt
+Podemos realizar ordenações na exibição do arquivo através de:
+
+sort arquivo.txt
+
+Usando o Nano
+Para usar o Nano, utilize o seguinte comando no terminal:
+
+nano
+Alguns comandos úteis do Nano:
+
+Para colar no nano um texto copiado: CTRL+U.
+Para copiar um texto dentro do nano: `ALT+6.
+Para recortar um texto dentro do nano: CTRL+K.
+Para salvar: CTRL+O.
+Para sair: CTRL+X.
+
+Com o terminal aberto, podemos visualizar o começo de um arquivo, usando o comando:
+
+head -c 300 texto_java.txt
+Este comando indica que desejamos visualizar os 300 primeiros caracteres.
+
+Podemos também visualizar o fim de um arquivo, usando o comando:
+
+tail -n 2 texto_java.txt
+Este comando indica que desejamos visualizar as 2 últimas linhas.
+
