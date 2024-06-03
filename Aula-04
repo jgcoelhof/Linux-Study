@@ -1,0 +1,84 @@
+No Ubuntu, quando se trata de executar scripts no terminal, há duas maneiras comuns de fazê-lo: usando bash script.sh ou ./script.sh. Ambas as opções têm suas diferenças e podem ser úteis em diferentes situações. Vamos explorar essas diferenças.
+
+bash script.sh
+Com bash script.sh, você pode executar um script sem a necessidade de conceder permissão de execução ao arquivo.
+Essa abordagem é útil quando você não deseja ou não pode alterar as permissões do arquivo de script.
+./script.sh
+Com ./script.sh, o arquivo de script deve ter permissão de execução concedida (você pode fazer isso com o comando chmod +x script.sh).
+É a maneira mais comum de executar scripts, mas requer que você ajuste as permissões antes da execução, o que pode ser uma etapa adicional.
+
+Variáveis de ambiente são uma série de parâmetros do sistema operacional que podem ser usados pelos programas. Em outras palavras, são informações que estão armazenadas no seu computador e que são utilizadas pelos programas para realizar tarefas específicas. Mas por que precisamos delas?
+
+Parte da mágica dos computadores é que programas diferentes precisam se comunicar em um nível básico. As variáveis de ambiente facilitam essa comunicação, pois ajudam os programas a saberem onde procurar certos recursos, como arquivos de dados, além de fornecerem informações sobre o sistema operacional e o hardware do computador.
+
+Agora que sabemos o que são e por que são importantes, vamos explorar suas diferenças no Linux e no Windows.
+
+Variáveis de ambiente no Linux
+No linux, as variáveis de ambiente são case-sensitive, o que significa que Variavel é diferente de variavel. Elas são geralmente armazenadas em arquivos bash, como ~/.bashrc ou ~/.bash_profile. Para exibi-las, você pode digitar printenv no terminal e apertar Enter. Veja um exemplo para definir uma nova variável de ambiente:
+
+export NEW_VARIABLE="Hello, World!"
+Para acessar essa variável, você usaria o comando echo $NEW_VARIABLE.
+
+Variáveis de ambiente no Windows
+No Windows, as variáveis de ambiente não são case-sensitive, o que significa que Variavel é a mesma coisa que variavel. Elas são normalmente armazenadas em Propriedades do Sistema -> Configurações Avançadas do Sistema -> Variáveis de Ambiente. Para exibi-las, você pode digitar set no prompt de comando. Confira um exemplo de como definir uma nova variável de ambiente:
+
+set NEW_VARIABLE="Hello, World!"
+Para acessar essa variável no prompt de comando, você usaria o comando echo %NEW_VARIABLE%.
+
+No geral, a principal diferença entre as variáveis de ambiente no Linux e no Windows é a forma como elas são armazenadas e acessadas. No entanto, o conceito básico por trás delas é o mesmo.
+
+Vamos criar uma pasta de logs e entrar nela:
+
+mkdir pasta_logs
+cd pasta_logs
+Em seguida vamos criar três arquivos .txt:
+
+echo 1 > log1.txt
+echo 2 > log2.txt
+echo 3 > log3.txt
+Agora, vamos voltar para o diretório anterior e criar duas novas pastas: backup e script.
+
+cd ..
+mkdir backup
+mkdir script
+Vamos entrar na pasta de script e abrir o Nano para isso:
+
+cd script
+nano
+No Nano, vamos escrever um script para copiar o conteúdo de pasta_logs para backup:
+
+cp /home/ubuntu/pasta_logs/*.txt /home/ubuntu/backup
+Vamos salvar o arquivo com o nome de bkp.sh através do comando CTRL+ O. Feito isso, precisamos dar permissão de execução para este script:
+
+chmod +x bkp.sh
+Para executar o script vamos usar o comando abaixo:
+
+./bkp.sh
+Pronto o nosso script foi executado!
+
+Adicionando variáveis de ambiente
+Antes de adicionarmos variáveis de ambiente, vamos verificar as variáveis de ambiente que já estão presentes no Ubuntu:
+
+echo $PATH
+Dessa forma será retornado as variáveis de ambiente de vários caminhos que será procurado quando digitar seu comando. Para incluir um novo caminho para a variável de ambiente podemos utilizar o comando abaixo:
+
+export PATH=$PATH:/home/ubuntu/script
+Pronto uma nova variável de ambiente foi adicionada!
+
+Instalando através do terminal
+Vamos instalar o MySQL, para isso vamos usar o comando abaixo para realizar o download:
+
+sudo apt install mysql-server
+Agora será feito o processo de download e instalação do MySQL. Para verificar se o MySQL está ativo, você pode usar:
+
+systemctl status mysql
+Em seguida, você pode dar seus primeiros passos com o MySQL:
+
+sudo mysql
+Será aberto via terminal, e você pode verificar quais bancos de dados já existem:
+
+show databases;
+Você pode criar um banco um banco de dados através do comando:
+
+create database terminal;
+Pronto! Conseguimos instalar e usar o MySQL
